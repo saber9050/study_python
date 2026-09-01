@@ -16,6 +16,10 @@ d1 = {}
 d2 = dict()
 print(type(d1),type(d2))
 d1["ksl"] = "kjoi"
-print(d1)
+d1[1]= 99
+d1[2]= 888
+print(d1.keys(),d1.values())
 d1.pop("ksl")
+print(d1)
+del d1[1]
 print(d1)

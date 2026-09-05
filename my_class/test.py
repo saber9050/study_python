@@ -20,12 +20,26 @@ print(d1.like)
 
 # 类继承
 class YellowDog(Dog):
-    def __init__(self,  name: str, age: int,like: str):
+    def __init__(self,  name: str, age: int,like: str,get:str):
         super().__init__(name, age)
         self.like = like
+        # 私有属性
+        self.__get = get
 
     def my_like(self):
         print(f"我喜欢{self.like}")
 
-y = YellowDog("橘子狗","i","石头")
+    def my_get(self):
+        print(self.__get)
+
+    # 私有方法
+    def __println(self):
+        print(666)
+
+    # 调用私有方法
+    def call_p(self):
+        self.__println()
+
+y = YellowDog("橘子狗","i","石头","90")
 print(y.age)
+y.call_p()

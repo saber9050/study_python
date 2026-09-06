@@ -21,6 +21,16 @@ print(d1.like)
 # 类继承
 class YellowDog(Dog):
     def __init__(self,  name: str, age: int,like: str,get:str):
+        # 校验参数
+        if not isinstance(name, str):
+            raise TypeError(f"参数name必须为str类型，实际传入：{type(name).__name__}")
+        if not isinstance(age, int):
+            raise TypeError(f"参数age必须为int类型，实际传入：{type(age).__name__}")
+        if not isinstance(like, str):
+            raise TypeError(f"参数like必须为str类型，实际传入：{type(like).__name__}")
+        if not isinstance(get, str):
+            raise TypeError(f"参数get必须为str类型，实际传入：{type(get).__name__}")
+
         super().__init__(name, age)
         self.like = like
         # 私有属性

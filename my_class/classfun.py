@@ -26,6 +26,9 @@ class Dog:
             print("成年")
         else:
             print("未成年")
+
+    def speak(self):
+        print("汪")
 # 用类调用类方法
 Dog.run(3)
 
@@ -40,3 +43,17 @@ a = Dog.new(99)
 print(a.__dict__)
 
 a.is_adult(9)
+
+class Cat(Dog):
+    def __init__(self,age,tt):
+        super().__init__(age)
+        self.tt = tt
+
+    # 方法重写，定义与父类同名方法
+    def speak(self):
+        # 可以调用父类的方法
+        super().speak()
+        print("喵")
+
+b = Cat(88,"uu")
+b.speak()

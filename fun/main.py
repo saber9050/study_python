@@ -16,3 +16,8 @@ def max(a,b:int):
 
 hello()
 print(max(1,2))
+
+# 匿名函数
+x = lambda a: a+10
+
+print(x(8))

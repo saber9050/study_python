@@ -1,4 +1,14 @@
+"""
+实例属性不会影响类属性
+"""
+
+
 class Dog:
+    # 类属性,公有
+    picture = "大黄"
+    __my = "test"
+
+
     # 构造方法
     # 注意：后面的类型只是提示，如果类型不一样也不会报错，不会做校验
     def __init__(self,name:str,age:int):
@@ -7,15 +17,35 @@ class Dog:
     # 自我介绍方法
     def introduce(self):
         print(f"我叫{self.name},年龄{self.age}")
+    # 访问私有属性
+    def y(self):
+        print(self.__my)
+    def x(self,you):
+        print(you)
 
 d1 = Dog("大黄",3)
 d1.introduce()
 
 # 临时扩展属性，不会影响类本身
 d1.like = "草莓"
+d1.time = "12点"
 
-print(d1.like)
+# 临时扩展方法
+def ttt():
+    print("老六就是我")
+d1.ttt = ttt()
+print(d1.__dict__)
+d1.ttt
 
+print(d1.like,d1.time)
+print(d1.picture)
+print(d1.y())
+print(d1.x(9))
+
+# 查看实例的属性
+print(d1.__dict__)
+
+print(type(d1))
 
 
 # 类继承
@@ -50,6 +80,6 @@ class YellowDog(Dog):
     def call_p(self):
         self.__println()
 
-y = YellowDog("橘子狗","i","石头","90")
+y = YellowDog("橘子狗",99,"石头","90")
 print(y.age)
 y.call_p()

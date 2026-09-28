@@ -57,3 +57,16 @@ class Cat(Dog):
 
 b = Cat(88,"uu")
 b.speak()
+
+
+"""
+两个常用方法：
+
+isinstance(实例,类):查看实例是否是指定的类或子类的实例
+
+issubclass(类1,类2):查看 类1 是不是 类2 的子类
+"""
+
+print(isinstance(a,Dog))
+
+print(issubclass(Cat,Dog))

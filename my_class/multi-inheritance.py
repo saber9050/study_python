@@ -3,7 +3,6 @@
 多重继承
 
 """
-from multiprocessing.pool import worker
 
 
 # 类1

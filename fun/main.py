@@ -46,3 +46,6 @@ def calculate(x,y):
     res2 = x - y
     return res1,res2
 print(calculate(1,2))
+
+x = lambda a,b:a-b
+print(x(1,2))

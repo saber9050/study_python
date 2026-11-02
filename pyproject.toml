@@ -1,0 +1,19 @@
+[project]
+name = "study"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "zxp", email = "1223349392@qq.com" }
+]
+requires-python = ">=3.13"
+dependencies = [
+    "fastapi[standard]>=0.162.0",
+]
+
+[project.scripts]
+study = "study:main"
+
+[build-system]
+requires = ["uv_build>=0.12.3,<0.13.0"]
+build-backend = "uv_build"

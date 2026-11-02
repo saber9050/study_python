@@ -30,3 +30,14 @@ async def select(select:My):
     if select == My.two:
         res =  "垃圾"
     return {"message":res}
+
+# 请求体   ===========================================================
+from pydantic import BaseModel
+class Item(BaseModel):
+    name:str
+    des:str | None = None
+
+@app.post("/item3/")
+async def create_item(item:Item):
+    return item
+

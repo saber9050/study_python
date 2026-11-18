@@ -1,10 +1,9 @@
 # 模型
 from langchain.chat_models import init_chat_model
 from langchain_core.messages import ToolMessage
-from langchain_core.messages.tool import tool_call
-from openai import api_key
 # 导入用户问题、助手提示词、系统提示词
-from langchain.messages import HumanMessage,AIMessage,SystemMessage
+from langchain.messages import HumanMessage
+
 # SystemMessage（系统消息）：给 AI 定全局规则、身份、约束，是底层指令，一般放在对话最开头。
 # HumanMessage（人类消息）：用户说的话，用户提问 / 输入。
 # AIMessage（AI 消息）：可充做历史对话记录
@@ -34,7 +33,7 @@ model = init_chat_model("deepseek-chat",
 # response = model.invoke(test1)
 # print(response)
 
-from mytool import get_weather
+from langchain2.mytool import get_weather
 
 # 工具调用
 with_tool = model.bind_tools([get_weather])

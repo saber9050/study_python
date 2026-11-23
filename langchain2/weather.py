@@ -1,3 +1,4 @@
+# 天气mcp
 from mcp.server.fastmcp import FastMCP
 
 mcp = FastMCP("Weather")
